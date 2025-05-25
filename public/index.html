@@ -3,29 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🩺 Web Inspector</title>
+    <title>🩺 Web Inspector - Audit & Optimize</title>
     <script defer src="app.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-gray-100 p-6">
-    <div class="max-w-xl mx-auto bg-white shadow-lg rounded-lg p-6">
-      <h1 class="text-2xl font-bold mb-4">🌐 Web Health Inspector</h1>
-      <input
-        type="text"
-        id="url"
-        placeholder="Enter URL (e.g., https://example.com)"
-        class="w-full p-2 border border-gray-300 rounded mb-4"
-      />
-      <button id="runAudit" class="bg-blue-500 text-white px-4 py-2 rounded">
-        Run Audit
-      </button>
-      <pre
-        id="result"
-        class="bg-gray-200 p-4 mt-4 rounded overflow-x-auto whitespace-pre-wrap"
-      ></pre>
-    </div>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header / Hero -->
+    <header class="bg-white shadow">
+      <div class="max-w-6xl mx-auto p-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600">🩺 Web Inspector</h1>
+        <a
+          href="#digital-products"
+          class="text-sm bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+          >Explore Digital Goods</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-50 to-blue-100 py-16">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="text-4xl font-bold mb-4">Free Website Audit Tool</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          Instantly check your website’s SEO health, meta tags, performance
+          basics, and more.
+        </p>
+        <input
+          type="text"
+          id="url"
+          placeholder="Enter your website URL (e.g., https://example.com)"
+          class="w-full md:w-2/3 p-3 border border-gray-300 rounded mb-4"
+        />
+        <br />
+        <button
+          id="runAudit"
+          class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+        >
+          Run Audit
+        </button>
+        <pre
+          id="result"
+          class="bg-gray-200 p-4 mt-6 rounded overflow-x-auto whitespace-pre-wrap text-left text-sm"
+        ></pre>
+      </div>
+    </section>
+
+    <!-- Digital Product Promotion -->
+    <section id="digital-products" class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-semibold mb-4">
+          ✨ Digital Goods to Supercharge Your Goals
+        </h3>
+        <p class="mb-8 text-gray-600">
+          Browse our collection of AI-generated digital products — perfect for
+          wellness, productivity, career, and more.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="border p-4 rounded-lg shadow hover:shadow-md transition">
+            <h4 class="text-xl font-bold mb-2">📓 Guided Journals</h4>
+            <p class="text-sm text-gray-600">
+              Gratitude, shadow work, anxiety relief & more.
+            </p>
+          </div>
+          <div class="border p-4 rounded-lg shadow hover:shadow-md transition">
+            <h4 class="text-xl font-bold mb-2">🧠 Affirmation Cards</h4>
+            <p class="text-sm text-gray-600">
+              Beautiful, printable cards for daily mindset boosts.
+            </p>
+          </div>
+          <div class="border p-4 rounded-lg shadow hover:shadow-md transition">
+            <h4 class="text-xl font-bold mb-2">📊 Notion Dashboards</h4>
+            <p class="text-sm text-gray-600">
+              Track goals, budgets, habits with powerful templates.
+            </p>
+          </div>
+        </div>
+
+        <a href="/store" <!-- update this to your actual product page path -->
+          class="inline-block mt-8 bg-gray-800 text-white px-6 py-3 rounded
+          hover:bg-gray-900 transition" > Visit Store →
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-center py-6 mt-12 text-sm text-gray-500">
+      © 2025 Web Inspector. Built for creators by creators.
+    </footer>
   </body>
 </html>

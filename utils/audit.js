@@ -1,40 +1,59 @@
-const { chromium } = require('playwright');
+// utils/audit.js
+import chalk from 'chalk';
+import ora from 'ora';
+import boxen from 'boxen';
+import figlet from 'figlet';
+import logSymbols from 'log-symbols';
+import { chromium } from 'playwright';
 
-async function runAudit(url) {
+console.log(
+  chalk.cyanBright(
+    figlet.textSync('Web Inspector', { horizontalLayout: 'fitted' })
+  )
+);
+
+const spinner = ora('Launching browser...').start();
+
+const url = process.argv[2] || 'https://example.com';
+
+try {
+  spinner.text = `Navigating to ${chalk.underline(url)}`;
+
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  const startTime = Date.now();
+  await page.goto(url, { waitUntil: 'networkidle' });
 
-  const errors = [];
-  page.on('pageerror', (err) => errors.push(err.message));
+  spinner.succeed('Page loaded');
+  spinner.start('Running basic checks...');
 
-  try {
-    const response = await page.goto(url, { waitUntil: 'domcontentloaded' });
-    const duration = Date.now() - startTime;
+  const title = await page.title();
+  const hasMetaDesc = (await page.$('meta[name="description"]')) !== null;
 
-    const title = await page.title();
-    let description = '';
-    try {
-      description = await page.$eval(
-        'meta[name="description"]',
-        (el) => el.content
-      );
-    } catch {}
+  await new Promise((res) => setTimeout(res, 1000)); // simulate work
+  spinner.succeed('Basic checks complete');
 
-    await browser.close();
+  console.log(
+    boxen(
+      [
+        `${logSymbols.success} Title: ${chalk.green(title)}`,
+        `${
+          hasMetaDesc ? logSymbols.success : logSymbols.error
+        } Meta Description: ${
+          hasMetaDesc ? chalk.green('Present') : chalk.red('Missing')
+        }`,
+      ].join('\n'),
+      {
+        padding: 1,
+        margin: 1,
+        borderStyle: 'round',
+        borderColor: 'blue',
+      }
+    )
+  );
 
-    return {
-      url,
-      status: response.status(),
-      duration,
-      title,
-      description: description || 'No meta description found.',
-      jsErrors: errors,
-    };
-  } catch (err) {
-    await browser.close();
-    return { error: 'Failed to audit site: ' + err.message };
-  }
+  await browser.close();
+  console.log(chalk.green('✅ Audit completed successfully'));
+} catch (err) {
+  spinner.fail(chalk.red('Audit failed: ') + err.message);
+  process.exit(1);
 }
-
-module.exports = runAudit;
