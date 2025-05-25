@@ -12,9 +12,15 @@ In addition, the framework includes a **Web Health Inspector** — a lightweight
 
 ---
 
-## Screenshot
+## Screenshots
+
+### Web Inspector Demo
 
 ![Web Inspector Demo](img/web-inspector-git-img.PNG)
+
+### UI Test Snapshot
+
+![UI Test Snapshot](img/web-inspector-snapshot-1-ui-test.PNG)
 
 ---
 
