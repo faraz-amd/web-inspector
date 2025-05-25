@@ -1,0 +1,15 @@
+{
+  "name": "web-health-inspector",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo 'no tests yet'",
+    "audit": "node utils/audit.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.52.0"
+  }
+}

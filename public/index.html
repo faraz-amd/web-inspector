@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🩺 Web Inspector</title>
+    <script defer src="app.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 p-6">
+    <div class="max-w-xl mx-auto bg-white shadow-lg rounded-lg p-6">
+      <h1 class="text-2xl font-bold mb-4">🌐 Web Health Inspector</h1>
+      <input
+        type="text"
+        id="url"
+        placeholder="Enter URL (e.g., https://example.com)"
+        class="w-full p-2 border border-gray-300 rounded mb-4"
+      />
+      <button id="runAudit" class="bg-blue-500 text-white px-4 py-2 rounded">
+        Run Audit
+      </button>
+      <pre
+        id="result"
+        class="bg-gray-200 p-4 mt-4 rounded overflow-x-auto whitespace-pre-wrap"
+      ></pre>
+    </div>
+  </body>
+</html>
