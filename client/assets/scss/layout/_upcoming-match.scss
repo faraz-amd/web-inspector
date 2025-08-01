@@ -1,0 +1,622 @@
+@use '../utils' as *;
+
+/*=============================
+    10. Upcoming Match
+===============================*/
+.section-pb-85 {
+    padding-bottom: 85px;
+}
+.upcoming-match {
+    &__area {
+        background-position: bottom center;
+        background-size: cover;
+    }
+    &__lists {
+        margin: 0 80px;
+        @media #{$lg} {
+            margin: 0 0;
+        }
+    }
+    &__item {
+        position: relative;
+        margin: 0 0 60px;
+        @media #{$xs} {
+            background: #0f1c23;
+            border: 1px solid #2c2b2b;
+            border-radius: 8px;
+            padding: 25px;
+        }
+        @media #{$sm} {
+            padding: 30px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            @include transform(translateY(-50%));
+            background-image: url(../img/bg/line.png);
+            max-width: 80%;
+            height: 13px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0 auto;
+            opacity: .1;
+            @media #{$lg} {
+                opacity: 0.05;
+            }
+            @media #{$xs} {
+                top: 60%;
+            }
+        }
+        & .svg-icon {
+            fill: #0f1c23;
+            stroke: #2c2b2b;
+            stroke-width: 1px;
+            fill-rule: evenodd;
+            & svg {
+                @media #{$md} {
+                    display: none;
+                }
+            }
+            @media #{$md} {
+                background: #0f1c23;
+                min-height: 140px;
+                border: 1px solid #2c2b2b;
+                border-radius: 8px;
+            }
+            @media #{$xs} {
+                display: none !important;
+            }
+        }
+        &:hover {
+            & .svg-icon {
+                stroke: var(--tg-theme-primary);
+            }
+        }
+    }
+    &__position {
+        @include flexbox();
+        position: absolute;
+        left: 60px;
+        right: 60px;
+        top: 21px;
+        bottom: 14px;
+        z-index: 1;
+        @media #{$lg} {
+            top: 17px;
+            bottom: 18px;
+        }
+        @media #{$md} {
+            top: 50%;
+            @include transform(translateY(-50%));
+            bottom: auto;
+            left: 30px;
+            right: 30px;
+        }
+        @media #{$xs} {
+            position: relative;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            top: auto;
+            @include transform(translateY(0));
+            left: 0;
+            right: 0;
+            row-gap: 15px;
+        }
+    }
+    &__team {
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        width: 104px;
+        height: 104px;
+        box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.14);
+        @include border-radius(15px);
+        background: #14242c;
+        border: 3px solid #34353d;
+        @include transition(.3s);
+        @media #{$lg} {
+            width: 90px;
+            height: 90px;
+            flex: 0 0 auto;
+        }
+        @media #{$xs} {
+            width: 75px;
+            height: 75px;
+        }
+        @media #{$sm} {
+            width: 90px;
+            height: 90px;
+        }
+        &:hover {
+            border-color: var(--tg-theme-primary);
+        }
+        & img {
+            max-height: 75px;
+            @media #{$lg} {
+                max-width: 60px;
+            }
+            @media #{$xs} {
+                max-width: 45px;
+            }
+            @media #{$sm} {
+                max-width: 60px;
+            }
+        }
+        &.team-left {
+            margin-right: 20px;
+            @media #{$md} {
+                margin-right: 15px;
+            }
+        }
+        &.team-right {
+            margin-left: 20px;
+            @media #{$md} {
+                margin-left: 15px;
+            }
+        }
+    }
+    &__content {
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        @media #{$xs} {
+            order: 2;
+            width: 100%;
+            flex: 0 0 100%;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        & .team--info {
+            & .game-name {
+                display: block;
+                text-transform: uppercase;
+                font-family: var(--tg-heading-font-family);
+                font-size: 14px;
+                font-weight: var(--tg-fw-bold);
+                color: var(--tg-theme-primary);
+                letter-spacing: 1px;
+            }
+            & .name {
+                font-size: 26px;
+                font-weight: var(--tg-fw-extra-bold);
+                letter-spacing: 1.5px;
+                margin: 0 0;
+                @media #{$lg} {
+                    font-size: 22px;
+                }
+                @media #{$md} {
+                    font-size: 20px;
+                }
+                @media #{$xs} {
+                    font-size: 18px;
+                }
+                @media #{$sm} {
+                    font-size: 20px;
+                }
+                & a:hover {
+                    color: var(--tg-theme-primary);
+                }
+            }
+            &.info-left {
+                text-align: right;
+                @media #{$xs} {
+                    text-align: left;
+                }
+            }
+            &.info-right {
+                @media #{$xs} {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    &__time {
+        @include border-radius(15px);
+        border: 4px solid #3f3f49;
+        background: rgba(12, 23, 29, 0.671);
+        width: 140px;
+        height: 110px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        margin: 0 35px;
+        @media #{$lg} {
+            width: 130px;
+            height: 85px;
+        }
+        @media #{$md} {
+            width: 100px;
+            height: 85px;
+            margin: 0 20px;
+        }
+        @media #{$xs} {
+            position: absolute;
+            top: 0;
+            width: 95px;
+            height: 75px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        @media #{$sm} {
+            width: 130px;
+            height: 90px;
+        }
+        & .time {
+            font-size: 34px;
+            margin: 0 0;
+            @media #{$lg} {
+                font-size: 30px;
+            }
+            @media #{$md} {
+                font-size: 26px;
+            }
+            @media #{$xs} {
+                font-size: 22px;
+            }
+            @media #{$sm} {
+                font-size: 30px;
+            }
+        }
+    }
+    &__date {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -24px;
+        max-width: 287px;
+        height: 24px;
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+        & svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            fill: #101d25;
+            fill-rule: evenodd;
+            @include transition(.3s);
+        }
+        & span {
+            position: absolute;
+            display: block;
+            left: 0;
+            right: 0;
+            top: 50%;
+            @include transform(translateY(-50%));
+            text-transform: uppercase;
+            font-size: 13px;
+            font-family: var(--tg-heading-font-family);
+            color: var(--tg-common-color-white);
+            font-weight: var(--tg-fw-bold);
+            letter-spacing: 1px;
+            opacity: .5;
+            @include transition(.3s);
+            line-height: 1;
+            padding: 0 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+    &__item:hover {
+        & .upcoming-match__date {
+            & svg {
+                fill: var(--tg-theme-primary);
+            }
+            & span {
+                color: #0f1c23;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+/*upcoming-match area 3******************/
+.section-pt-170 {
+    padding-top: 170px;
+    @media #{$xs} {
+        padding-top: 175px;
+    }
+}
+.upcoming-match__item2 {
+    position: relative;
+    margin-top: 33px;
+    margin-bottom: 45px;
+    .upcoming-match__wrap {
+        display: flex;
+        z-index: 1;
+        position: relative;
+    }
+    .upcoming-match__team {
+        background: #1F222D;
+        border-radius: 0;
+        border: 0;
+        width: 160px;
+        height: 120px;
+        margin: 0;
+        a {
+            display: flex;
+            background: #12141D;
+            justify-content: center;
+            align-items: center;
+            width: 146px;
+            height: 108px;
+        }
+        &.team-left {
+            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 30px 100%);
+            a {
+                clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 100%, 28px 100%);
+            }
+        }
+        &.team-right {
+            clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+            a {
+                clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+            }
+        }
+    }
+    .upcoming-match__content {
+        .name {
+            background: #12141D;
+            border: 6px solid #1F222D;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 16px 53px;
+        }
+        .social-wrap {
+            display: inline-flex;
+            background: #1F222D;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: var(--tg-heading-font-family);
+            color: var(--tg-common-color-white);
+            text-transform: uppercase;
+            gap: 10px;
+            padding: 5.75px 80px 5.75px 45px;
+            clip-path: polygon(30px 0, 100% 0, 100% 100%, 0% 100%);
+            position: relative;
+            z-index: 1;
+            margin-bottom: -6px;
+            a {
+                color: var(--tg-common-color-white);
+                &:hover {
+                    color: var(--tg-theme-primary);
+                }
+            }
+        }
+        .game-name {
+            display: inline-flex;
+            background: #1F222D;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: var(--tg-heading-font-family);
+            color: var(--tg-common-color-white);
+            text-transform: uppercase;
+            gap: 10px;
+            padding: 5.75px 80px 5.75px 45px;
+            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0% 100%);
+            position: relative;
+            z-index: 1;
+            margin-bottom: -6px;
+        }
+        .team--info {
+            width: 100%;
+            &.info-left {
+                margin-left: -30px;
+                margin-right: -15px;
+                .social-wrap {
+                    justify-content: end;
+                }
+                .name {
+                    text-align: start;
+                    margin-right: -30px;
+                }
+            }
+            &.info-right {
+                margin-right: -30px;
+                margin-left: -15px;
+                .name {
+                    text-align: end;
+                    margin-left: -30px;
+                }
+            }
+        }
+    }
+    .upcoming-match__versus {
+        background: #1F222D;
+        clip-path: polygon(0 0, 100% 0, calc(100% - 40px) 100%, 40px 100%);
+        .versus {
+            margin: 0;
+            font-size: 40px;
+            font-weight: 800;
+            padding: 23px 66px;
+            background: #12141D;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 35px) 100%, 35px 100%);
+            margin: 6px 9px;
+        }
+    }
+    .upcoming-match__day {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 12px;
+        text-align: center;
+        transform: translate(0, -100%);
+        font-size: 16px;
+        font-weight: 700;
+        font-family: var(--tg-heading-font-family);
+        color: var(--tg-common-color-white);
+        text-transform: uppercase;
+        span {
+            background: #1F222D;
+            display: inline-block;
+            padding: 8.5px 65px;
+            clip-path: polygon(27px 0%, calc(100% - 27px) 0%, 100% 100%, 0% 100%);
+            position: relative;
+            transition: 0.4s;
+            &:after {
+                content: "";
+                position: absolute;
+                inset: 4px 8px;
+                clip-path: polygon(22px 0%, calc(100% - 22px) 0%, 100% 100%, 0% 100%);
+                background: #12141D;
+                z-index: -1;
+            }
+        }
+    }
+    .upcoming-match__date {
+        max-width: 350px;
+        height: auto;
+        overflow: inherit;
+        bottom: -55px;
+        span {
+            font-size: 20px;
+            font-weight: 700;
+            font-family: var(--tg-heading-font-family);
+            color: var(--tg-common-color-white);
+            opacity: 1;
+            letter-spacing: normal;
+            background: #1F222D;
+            display: inline-block;
+            padding: 15.5px 65px 19.5px;
+            position: relative;
+            transform: none;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 35px) 100%, 35px 100%);
+            &:after {
+                content: "";
+                position: absolute;
+                inset: 2px 10px 6px;
+                clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 28px 100%);
+                background: #12141D;
+                z-index: -1;
+                transition: 0.4s;
+            }
+        }
+    }
+    &:hover {
+        .upcoming-match__day span,
+        .upcoming-match__team {
+            background: var(--tg-theme-primary);
+        }
+        .upcoming-match__date span {
+            color: var(--tg-common-color-black-2);
+            &:after {
+                background: var(--tg-theme-primary);
+            }
+        }
+    }
+    @media #{$lg} {
+        margin-top: 0;
+        .upcoming-match__wrap {
+            display: block;
+        }
+        .upcoming-match__team {
+            clip-path: none !important;
+            background: #12141D;
+            border: 6px solid #1F222D;
+            width: 140px;
+            a {
+                width: auto;
+                height: auto;
+                clip-path: none !important;
+                background: transparent;
+            }
+        }
+        .upcoming-match__content .name {
+            font-size: 20px;
+            padding: 16px 25px;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+            text-align: center !important;
+        }
+        .upcoming-match__content .team--info {
+            background: #1F222D;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            text-align: center !important;
+        }
+        .upcoming-match__content .social-wrap {
+            padding: 5.75px 30px 5.75px 30px;
+            clip-path: none;
+        }
+        .upcoming-match__content .game-name {
+            padding: 5.75px 25px 5.75px 25px;
+        }
+        .upcoming-match__team.team-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .upcoming-match__versus {
+            clip-path: none;
+            .versus {
+                padding: 20px 55px;
+            }
+        }
+        .upcoming-match__day {
+            top: 125px;
+        }
+        &:hover {
+            .upcoming-match__team {
+                background: #12141D;
+                border-color: var(--tg-theme-primary);
+            }
+        }
+    }
+    @media #{$md} {
+        .upcoming-match__content .social-wrap {
+            font-size: 12px;
+        }
+        .upcoming-match__content .game-name {
+            font-size: 12px;
+        }
+        .upcoming-match__content .name {
+            font-size: 18px;
+        }
+        .upcoming-match__date span {
+            font-size: 16px;
+        }
+        .upcoming-match__versus .versus {
+            padding: 18px 55px;
+        }
+    }
+    @media #{$xs} {
+        .upcoming-match__content {
+            display: block;
+        }
+        .upcoming-match__versus {
+            margin: -6px 0;
+            .versus {
+                clip-path: none;
+                text-align: center;
+            }
+        }
+        .upcoming-match__team {
+            box-shadow: none;
+        }
+        .upcoming-match__day {
+            top: 120px;
+        }
+    }
+    @media #{$sm} {
+        .upcoming-match__day {
+            top: 125px;
+        }
+    }
+    @media #{$vxs} {
+        .upcoming-match__team {
+            width: 110px;
+            height: 100px;
+        }
+        .upcoming-match__day {
+            top: 104px;
+        }
+    }
+}

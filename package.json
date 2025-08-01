@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "start": "node utils/server.js",
+    "dev": "nodemon utils/server.js",
     "test": "echo 'no tests yet'",
     "audit": "node utils/audit.js"
   },
@@ -12,9 +14,13 @@
   "dependencies": {
     "boxen": "^8.0.1",
     "chalk": "^5.4.1",
+    "express": "^5.1.0",
     "figlet": "^1.8.1",
     "log-symbols": "^7.0.1",
     "ora": "^8.2.0",
     "playwright": "^1.52.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }

@@ -4,95 +4,156 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🩺 Web Inspector - Audit & Optimize</title>
-    <script defer src="app.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <meta name="description" content="Free website audit tool for SEO, meta tags, and performance." />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   </head>
-  <body class="bg-gray-50 text-gray-800">
-    <!-- Header / Hero -->
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Header -->
     <header class="bg-white shadow">
-      <div class="max-w-6xl mx-auto p-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-blue-600">🩺 Web Inspector</h1>
-        <a
-          href="#digital-products"
-          class="text-sm bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-          >Explore Digital Goods</a
-        >
-      </div>
+      <nav class="container mx-auto flex items-center justify-between py-4 px-4">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🩺</span>
+          <span class="font-bold text-xl text-blue-700">Web Inspector</span>
+        </div>
+        <ul class="flex gap-6 font-medium text-gray-700">
+          <li><a href="/index.html" class="hover:text-blue-600">Home</a></li>
+          <li><a href="/about-us.html" class="hover:text-blue-600">About</a></li>
+          <li><a href="/blog.html" class="hover:text-blue-600">Blog</a></li>
+          <li><a href="/login.html" class="hover:text-blue-600">Login</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-50 to-blue-100 py-16">
-      <div class="max-w-4xl mx-auto text-center px-6">
-        <h2 class="text-4xl font-bold mb-4">Free Website Audit Tool</h2>
-        <p class="text-lg text-gray-700 mb-6">
-          Instantly check your website’s SEO health, meta tags, performance
-          basics, and more.
-        </p>
-        <input
-          type="text"
-          id="url"
-          placeholder="Enter your website URL (e.g., https://example.com)"
-          class="w-full md:w-2/3 p-3 border border-gray-300 rounded mb-4"
-        />
-        <br />
-        <button
-          id="runAudit"
-          class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
-        >
-          Run Audit
-        </button>
-        <pre
-          id="result"
-          class="bg-gray-200 p-4 mt-6 rounded overflow-x-auto whitespace-pre-wrap text-left text-sm"
-        ></pre>
-      </div>
-    </section>
-
-    <!-- Digital Product Promotion -->
-    <section id="digital-products" class="py-16 bg-white">
-      <div class="max-w-5xl mx-auto px-6 text-center">
-        <h3 class="text-3xl font-semibold mb-4">
-          ✨ Digital Goods to Supercharge Your Goals
-        </h3>
-        <p class="mb-8 text-gray-600">
-          Browse our collection of AI-generated digital products — perfect for
-          wellness, productivity, career, and more.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="border p-4 rounded-lg shadow hover:shadow-md transition">
-            <h4 class="text-xl font-bold mb-2">📓 Guided Journals</h4>
-            <p class="text-sm text-gray-600">
-              Gratitude, shadow work, anxiety relief & more.
-            </p>
-          </div>
-          <div class="border p-4 rounded-lg shadow hover:shadow-md transition">
-            <h4 class="text-xl font-bold mb-2">🧠 Affirmation Cards</h4>
-            <p class="text-sm text-gray-600">
-              Beautiful, printable cards for daily mindset boosts.
-            </p>
-          </div>
-          <div class="border p-4 rounded-lg shadow hover:shadow-md transition">
-            <h4 class="text-xl font-bold mb-2">📊 Notion Dashboards</h4>
-            <p class="text-sm text-gray-600">
-              Track goals, budgets, habits with powerful templates.
-            </p>
-          </div>
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col justify-center items-center px-4">
+      <section class="w-full max-w-md mx-auto mt-16 mb-8 p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+        <h1 class="text-3xl font-bold text-blue-600 mb-2 text-center">🩺 Web Inspector</h1>
+        <p class="text-gray-600 text-center mb-6">Minimalist Website Audit Tool</p>
+        <form id="auditForm" class="space-y-4">
+          <input type="text" id="url" name="url" required placeholder="Enter website URL (e.g. https://example.com)" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200" />
+          <button type="submit" id="runAudit" class="w-full bg-blue-600 text-white py-3 rounded font-semibold hover:bg-blue-700 transition">Run Audit</button>
+        </form>
+        <div id="runningDialog" class="hidden flex items-center justify-center mt-6">
+          <svg class="animate-spin h-5 w-5 text-blue-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+          </svg>
+          <span class="text-blue-700 font-medium">Running audit...</span>
         </div>
-
-        <a href="/store" <!-- update this to your actual product page path -->
-          class="inline-block mt-8 bg-gray-800 text-white px-6 py-3 rounded
-          hover:bg-gray-900 transition" > Visit Store →
-        </a>
-      </div>
-    </section>
+        <div id="result" class="mt-6 flex justify-center"></div>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 text-center py-6 mt-12 text-sm text-gray-500">
-      © 2025 Web Inspector. Built for creators by creators.
+    <footer class="bg-white border-t py-4 mt-auto">
+      <div class="container mx-auto text-center text-gray-500 text-sm">
+        &copy; 2025 Renzler
+      </div>
     </footer>
+
+    <!-- Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('auditForm');
+      const urlInput = document.getElementById('url');
+      const result = document.getElementById('result');
+      const dialog = document.getElementById('runningDialog');
+
+      function showDialog() {
+        dialog.classList.remove('hidden');
+      }
+      function hideDialog() {
+        dialog.classList.add('hidden');
+      }
+
+      function isValidUrl(url) {
+        try {
+          const u = new URL(url);
+          return u.protocol === "http:" || u.protocol === "https:";
+        } catch {
+          return false;
+        }
+      }
+
+      function renderCard(data) {
+        if (!data) return '';
+        if (typeof data === 'string') {
+          return `<div class="bg-red-100 text-red-700 p-4 rounded w-full max-w-lg">${data}</div>`;
+        }
+        return `
+          <div class="bg-white rounded-xl shadow-lg border border-gray-200 w-full max-w-lg p-6 animate-fade-in">
+            <div class="font-bold text-xl text-blue-700 mb-4 flex items-center gap-2">
+              <span>🩺</span> Audit Results
+            </div>
+            <div class="grid grid-cols-1 gap-3">
+              <div class="flex justify-between"><span class="font-medium">Title:</span><span>${data.title || '-'}</span></div>
+              <div class="flex justify-between"><span class="font-medium">Meta Description:</span><span>${data.hasMetaDesc ? '<span class="text-green-600">Present</span>' : '<span class="text-red-600">Missing</span>'}</span></div>
+              <div class="flex justify-between"><span class="font-medium">H1 Tags:</span><span>${data.h1Count ?? '-'}</span></div>
+              <div class="flex justify-between"><span class="font-medium">Links:</span>
+                <span>
+                  ${data.linksCount ?? '-'}
+                  ${data.brokenLinks && data.brokenLinks.length ? `<span class="text-red-600 ml-2">(Broken: ${data.brokenLinks.length})</span>` : ''}
+                </span>
+              </div>
+              <div class="flex justify-between"><span class="font-medium">Images:</span>
+                <span>
+                  ${data.imagesCount ?? '-'}
+                  <span class="text-yellow-700 ml-2">(With alt: ${data.imagesWithAlt ?? '-'})</span>
+                </span>
+              </div>
+              <div class="flex justify-between"><span class="font-medium">Large Images:</span><span>${data.imagesLarge && data.imagesLarge.length ? data.imagesLarge.length : 'None'}</span></div>
+              <div class="flex justify-between"><span class="font-medium">Page Load Time:</span><span>${data.loadTime ? data.loadTime + ' ms' : '-'}</span></div>
+              <div class="flex justify-between"><span class="font-medium">Mobile Friendly:</span><span>${data.isMobileOk ? '<span class="text-green-600">Yes</span>' : '<span class="text-red-600">No</span>'}</span></div>
+            </div>
+            ${data.brokenLinks && data.brokenLinks.length ? `
+              <div class="mt-4">
+                <div class="font-medium mb-1">Broken Links:</div>
+                <ul class="list-disc ml-6 space-y-1">
+                  ${data.brokenLinks.map(l => `<li class="text-red-600 break-all">${l}</li>`).join('')}
+                </ul>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const url = urlInput.value.trim();
+        result.innerHTML = '';
+        if (!isValidUrl(url)) {
+          result.innerHTML = `<div class="bg-red-100 text-red-700 p-4 rounded w-full max-w-lg">❌ Please enter a valid website URL starting with http:// or https://</div>`;
+          return;
+        }
+        showDialog();
+        try {
+          const res = await fetch('/run-inspector', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url })
+          });
+          const data = await res.json();
+          hideDialog();
+          if (data.error) {
+            result.innerHTML = `<div class="bg-red-100 text-red-700 p-4 rounded w-full max-w-lg">${data.error}</div>`;
+            return;
+          }
+          result.innerHTML = renderCard(data.result);
+        } catch (err) {
+          hideDialog();
+          result.innerHTML = `<div class="bg-red-100 text-red-700 p-4 rounded w-full max-w-lg">Error: ${err.message}</div>`;
+        }
+      });
+    });
+    </script>
+    <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(16px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .animate-fade-in {
+      animation: fade-in 0.4s ease;
+    }
+    </style>
   </body>
 </html>

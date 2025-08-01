@@ -1,29 +1,16 @@
 # Playwright JavaScript-Based Test Automation Framework
-
 **Built by Ahmad Faraz (2025)**
-
----
-
+--
 ## Overview
-
 This is a modern test automation framework built using JavaScript and Node.js, designed to support both UI and API testing with a focus on reliability and maintainability. The framework leverages Playwright for browser automation and integrates other tools and libraries to provide a comprehensive testing solution.
-
 In addition, the framework includes a **Web Health Inspector** — a lightweight web auditing tool built with Playwright and Express, designed to analyze web page performance and accessibility with an easy-to-use frontend.
-
 ---
-
 ## Screenshots
-
 ### Web Inspector Demo
-
 ![Web Inspector Demo](img/web-inspector-git-img.PNG)
-
 ### UI Test Snapshot
-
 ![UI Test Snapshot](img/web-inspector-snapshot-1-ui-test.PNG)
-
 ---
-
 ## Tech Stack Used
 
 - JavaScript (ES Modules)

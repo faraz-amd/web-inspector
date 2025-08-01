@@ -1,0 +1,253 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?bfbb5becf4cba6c4e0dd52e574bb002b") format("truetype"),
+url("./flaticon.woff?bfbb5becf4cba6c4e0dd52e574bb002b") format("woff"),
+url("./flaticon.woff2?bfbb5becf4cba6c4e0dd52e574bb002b") format("woff2"),
+url("./flaticon.eot?bfbb5becf4cba6c4e0dd52e574bb002b#iefix") format("embedded-opentype"),
+url("./flaticon.svg?bfbb5becf4cba6c4e0dd52e574bb002b#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "internet": "\f101",
+    "worldwide": "\f102",
+    "international": "\f103",
+    "login": "\f104",
+    "import": "\f105",
+    "lock": "\f106",
+    "padlock": "\f107",
+    "edit": "\f108",
+    "search": "\f109",
+    "duel": "\f10a",
+    "swords-in-cross-arrangement": "\f10b",
+    "crossed-swords": "\f10c",
+    "right-arrow": "\f10d",
+    "facebook": "\f10e",
+    "twitter": "\f10f",
+    "instagram": "\f110",
+    "youtube": "\f111",
+    "discord": "\f112",
+    "twitch": "\f113",
+    "right-arrow-1": "\f114",
+    "right-arrow-2": "\f115",
+    "magnifying-glass": "\f116",
+    "swords": "\f117",
+    "swords-1": "\f118",
+    "chess": "\f119",
+    "invoice": "\f11a",
+    "withdrawal": "\f11b",
+    "web": "\f11c",
+    "add-user": "\f11d",
+    "checked": "\f11e",
+    "message": "\f11f",
+    "nft": "\f120",
+    "wallet": "\f121",
+    "wallet-1": "\f122",
+    "paper-plane": "\f123",
+    "send": "\f124",
+    "loupe": "\f125",
+    "search-1": "\f126",
+    "play": "\f127",
+    "right-arrow-3": "\f128",
+    "next": "\f129",
+    "diamond": "\f12a",
+    "ethereum": "\f12b",
+    "star": "\f12c",
+    "settings": "\f12d",
+    "settings-1": "\f12e",
+    "guru": "\f12f",
+    "best-employee": "\f130",
+    "user-profile": "\f131",
+    "quote": "\f132",
+    "circle": "\f133",
+    "repeat": "\f134",
+    "repeat-2": "\f135",
+    "quotation": "\f136",
+    "quote-1": "\f137",
+    "play-1": "\f138",
+    "play-button": "\f139",
+);
+
+.flaticon-internet:before {
+    content: map-get($flaticon-map, "internet");
+}
+.flaticon-worldwide:before {
+    content: map-get($flaticon-map, "worldwide");
+}
+.flaticon-international:before {
+    content: map-get($flaticon-map, "international");
+}
+.flaticon-login:before {
+    content: map-get($flaticon-map, "login");
+}
+.flaticon-import:before {
+    content: map-get($flaticon-map, "import");
+}
+.flaticon-lock:before {
+    content: map-get($flaticon-map, "lock");
+}
+.flaticon-padlock:before {
+    content: map-get($flaticon-map, "padlock");
+}
+.flaticon-edit:before {
+    content: map-get($flaticon-map, "edit");
+}
+.flaticon-search:before {
+    content: map-get($flaticon-map, "search");
+}
+.flaticon-duel:before {
+    content: map-get($flaticon-map, "duel");
+}
+.flaticon-swords-in-cross-arrangement:before {
+    content: map-get($flaticon-map, "swords-in-cross-arrangement");
+}
+.flaticon-crossed-swords:before {
+    content: map-get($flaticon-map, "crossed-swords");
+}
+.flaticon-right-arrow:before {
+    content: map-get($flaticon-map, "right-arrow");
+}
+.flaticon-facebook:before {
+    content: map-get($flaticon-map, "facebook");
+}
+.flaticon-twitter:before {
+    content: map-get($flaticon-map, "twitter");
+}
+.flaticon-instagram:before {
+    content: map-get($flaticon-map, "instagram");
+}
+.flaticon-youtube:before {
+    content: map-get($flaticon-map, "youtube");
+}
+.flaticon-discord:before {
+    content: map-get($flaticon-map, "discord");
+}
+.flaticon-twitch:before {
+    content: map-get($flaticon-map, "twitch");
+}
+.flaticon-right-arrow-1:before {
+    content: map-get($flaticon-map, "right-arrow-1");
+}
+.flaticon-right-arrow-2:before {
+    content: map-get($flaticon-map, "right-arrow-2");
+}
+.flaticon-magnifying-glass:before {
+    content: map-get($flaticon-map, "magnifying-glass");
+}
+.flaticon-swords:before {
+    content: map-get($flaticon-map, "swords");
+}
+.flaticon-swords-1:before {
+    content: map-get($flaticon-map, "swords-1");
+}
+.flaticon-chess:before {
+    content: map-get($flaticon-map, "chess");
+}
+.flaticon-invoice:before {
+    content: map-get($flaticon-map, "invoice");
+}
+.flaticon-withdrawal:before {
+    content: map-get($flaticon-map, "withdrawal");
+}
+.flaticon-web:before {
+    content: map-get($flaticon-map, "web");
+}
+.flaticon-add-user:before {
+    content: map-get($flaticon-map, "add-user");
+}
+.flaticon-checked:before {
+    content: map-get($flaticon-map, "checked");
+}
+.flaticon-message:before {
+    content: map-get($flaticon-map, "message");
+}
+.flaticon-nft:before {
+    content: map-get($flaticon-map, "nft");
+}
+.flaticon-wallet:before {
+    content: map-get($flaticon-map, "wallet");
+}
+.flaticon-wallet-1:before {
+    content: map-get($flaticon-map, "wallet-1");
+}
+.flaticon-paper-plane:before {
+    content: map-get($flaticon-map, "paper-plane");
+}
+.flaticon-send:before {
+    content: map-get($flaticon-map, "send");
+}
+.flaticon-loupe:before {
+    content: map-get($flaticon-map, "loupe");
+}
+.flaticon-search-1:before {
+    content: map-get($flaticon-map, "search-1");
+}
+.flaticon-play:before {
+    content: map-get($flaticon-map, "play");
+}
+.flaticon-right-arrow-3:before {
+    content: map-get($flaticon-map, "right-arrow-3");
+}
+.flaticon-next:before {
+    content: map-get($flaticon-map, "next");
+}
+.flaticon-diamond:before {
+    content: map-get($flaticon-map, "diamond");
+}
+.flaticon-ethereum:before {
+    content: map-get($flaticon-map, "ethereum");
+}
+.flaticon-star:before {
+    content: map-get($flaticon-map, "star");
+}
+.flaticon-settings:before {
+    content: map-get($flaticon-map, "settings");
+}
+.flaticon-settings-1:before {
+    content: map-get($flaticon-map, "settings-1");
+}
+.flaticon-guru:before {
+    content: map-get($flaticon-map, "guru");
+}
+.flaticon-best-employee:before {
+    content: map-get($flaticon-map, "best-employee");
+}
+.flaticon-user-profile:before {
+    content: map-get($flaticon-map, "user-profile");
+}
+.flaticon-quote:before {
+    content: map-get($flaticon-map, "quote");
+}
+.flaticon-circle:before {
+    content: map-get($flaticon-map, "circle");
+}
+.flaticon-repeat:before {
+    content: map-get($flaticon-map, "repeat");
+}
+.flaticon-repeat-2:before {
+    content: map-get($flaticon-map, "repeat-2");
+}
+.flaticon-quotation:before {
+    content: map-get($flaticon-map, "quotation");
+}
+.flaticon-quote-1:before {
+    content: map-get($flaticon-map, "quote-1");
+}
+.flaticon-play-1:before {
+    content: map-get($flaticon-map, "play-1");
+}
+.flaticon-play-button:before {
+    content: map-get($flaticon-map, "play-button");
+}

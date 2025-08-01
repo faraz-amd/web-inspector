@@ -1,0 +1,175 @@
+@use '../utils' as *;
+
+/*=============================
+    00. Login
+===============================*/
+.singUp {
+    &-wrap {
+        background-color: #121a23;
+        background-image: -moz-linear-gradient(90deg, #0c0e12 0%, rgba(31, 41, 53, 0.36078) 100%);
+        background-image: -webkit-linear-gradient(90deg, #0c0e12 0%, rgba(31, 41, 53, 0.36078) 100%);
+        background-image: -ms-linear-gradient(90deg, #0c0e12 0%, rgba(31, 41, 53, 0.36078) 100%);
+        @include border-radius(8px);
+        border: 1px solid rgba(76, 76, 76, .2);
+        padding: 30px 50px 40px;
+        @media #{$xs} {
+            padding: 30px 20px 30px;
+        }
+        @media #{$sm} {
+            padding: 30px 30px 30px;
+        }
+        & .title {
+            font-size: 36px;
+            margin-bottom: 10px;
+            @media #{$xs} {
+                font-size: 26px;
+            }
+        }
+        & p {
+            margin-bottom: 25px;
+            @media #{$xs} {
+                & br {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.account {
+    &__social {
+        &-btn {
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+            background: var(--tg-common-color-black);
+            border: 1px solid rgba(76, 76, 76, .2);
+            @include border-radius(2px);
+            font-size: 16px;
+            gap: 10px;
+            color: var(--tg-common-color-dark);
+            padding: 10px 20px;
+            &:hover {
+                color: var(--tg-theme-primary);
+                border-color: var(--tg-theme-primary);
+            }
+        }
+    }
+    &__divider {
+        position: relative;
+        text-align: center;
+        margin-block-end: 35px;
+        margin-block-start: 35px;
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            width: 40%;
+            left: 0;
+            top: 50%;
+            @include transform(translateY(-50%));
+            background: rgba(76, 76, 76, .5);
+            position: absolute;
+        }
+        &::after {
+            left: auto;
+            right: 0;
+        }
+        & span {
+            font-size: 16px;
+            color: var(--tg-heading-color);
+        }
+    }
+    &__form {
+        & .form-grp {
+            margin-bottom: 20px;
+            & label {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+            & input {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 16px;
+                color: var(--tg-heading-color);
+                border: 1px solid rgba(76, 76, 76, .2);
+                background: var(--tg-common-color-gray);
+                @include border-radius(2px);
+                line-height: 1;
+                @include transition(.3s);
+                &::placeholder {
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: var(--tg-body-color);
+                    opacity: .8;
+                    text-transform: capitalize;
+                }
+                &:focus {
+                    border-color: var(--tg-theme-primary);
+                }
+            }
+        }
+        & .btn {
+            width: 100%;
+            justify-content: center;
+            margin-top: 30px;
+            &.mt-15 {
+                margin-top: 15px;
+            }
+        }
+    }
+    &__switch {
+        margin-top: 30px;
+        & p {
+            margin-bottom: 0;
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            & a {
+                color: var(--tg-theme-primary);
+                text-decoration: underline;
+                &:hover {
+                    color: var(--tg-theme-secondary);
+                }
+            }
+        }
+    }
+    &__check {
+        @include flexbox();
+        align-items: center;
+        gap: 15px;
+        justify-content: space-between;
+        &-remember {
+            @include flexbox();
+            gap: 5px;
+            & input {
+                width: 20px;
+                height: 20px;
+                margin-inline-end: 3px;
+                background: var(--tg-common-color-gray);
+                &:focus {
+                    box-shadow: none;
+                }
+                &:checked {
+                    background-color: var(--tg-theme-primary);
+                    border-color: var(--tg-theme-primary);
+                }
+            }
+            & label {
+                user-select: none;
+            }
+        }
+        &-forgot {
+            & a {
+                color: var(--tg-theme-primary);
+                font-size: 16px;
+                text-decoration: underline;
+                &:hover {
+                    color: var(--tg-theme-primary);
+                }
+            }
+        }
+    }
+}

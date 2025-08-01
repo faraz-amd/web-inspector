@@ -1,0 +1,394 @@
+@use '../utils' as *;
+
+/*=============================
+	1. Button style
+===============================*/
+.btn {
+    user-select: none;
+    -moz-user-select: none;
+    background: var(--tg-theme-primary) none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 2px;
+    color: var(--tg-common-color-black-2);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: var(--tg-fw-extra-bold);
+    letter-spacing: .8px;
+    margin-bottom: 0;
+    padding: 15px 34px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    @include transition(.3s);
+    vertical-align: middle;
+    font-family: var(--tg-heading-font-family);
+    white-space: nowrap;
+    &:hover {
+        background: var(--tg-common-color-gray);
+        color: var(--tg-common-color-white);
+    }
+}
+
+/* TG Button 01 */
+.tg-btn-1 {
+    display: inline-flex;
+    font-family: var(--tg-heading-font-family);
+    color: var(--tg-common-color-black-2);
+    font-weight: var(--tg-fw-extra-bold);
+    text-transform: uppercase;
+    padding: 14px 49px;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    text-align: center;
+    min-width: 195px;
+    z-index: 1;
+    & svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    & .cls-1 {
+        fill: var(--tg-theme-primary);
+        stroke: var(--tg-common-color-white);
+        stroke-width: 1.5px;
+        @include transition(.3s);
+    }
+    & .cls-2 {
+        stroke: transparent;
+        fill: var(--tg-common-color-white);
+    }
+    & .cls-1,
+    & .cls-2 {
+        fill-rule: evenodd;
+    }
+    &:hover {
+        color: var(--tg-common-color-black-2);
+        & .cls-1 {
+            fill: var(--tg-common-color-white);
+        }
+    }
+    &.-btn-yellow {
+        & .cls-1 {
+            fill: var(--tg-theme-secondary);
+        }
+        &:hover {
+            & .cls-1 {
+                fill: var(--tg-theme-primary);
+            }
+        }
+    }
+}
+.tg-border-btn {
+    display: inline-flex;
+    font-family: var(--tg-heading-font-family);
+    color: var(--tg-common-color-white);
+    font-weight: var(--tg-fw-extra-bold);
+    text-transform: uppercase;
+    padding: 10px 30px;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 157px;
+    min-height: 48px;
+    z-index: 1;
+    & svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        color: var(--tg-theme-primary);
+        & path:last-child {
+            fill: transparent;
+            @include transition(.3s);
+        }
+    }
+    & i {
+        margin-right: 10px;
+    }
+    &:hover {
+        color: var(--tg-common-color-black-2);
+        & svg path:last-child {
+            fill: var(--tg-theme-primary);
+        }
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+/* TG Button 02 */
+.tg-btn-2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: var(--tg-heading-font-family);
+    color: var(--tg-common-color-white);
+    font-weight: var(--tg-fw-bold);
+    white-space: nowrap;
+    font-size: 20px;
+    padding: 16px 35px;
+    line-height: 1;
+    position: relative;
+    overflow: hidden;
+    @include transition(.3s);
+    z-index: 1;
+    & svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        & path {
+            stroke: var(--tg-theme-primary);
+        }
+    }
+    &:hover {
+        background-color: var(--tg-theme-primary);
+        color: var(--tg-common-color-black-2);
+    }
+    &.-secondary {
+        & svg {
+            & path {
+                stroke: var(--tg-theme-secondary);
+            }
+        }
+        &:hover {
+            background-color: var(--tg-theme-secondary);
+        }
+    }
+}
+
+/* TG Button 03 */
+.tg-btn-3 {
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: var(--tg-heading-font-family);
+    color: var(--tg-common-color-black-2);
+    font-weight: var(--tg-fw-extra-bold);
+    background: transparent;
+    border: none;
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 22px 35px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    @include transition(.3s);
+    min-width: 188px;
+    @media #{$xs} {
+        min-width: 166px;
+        padding: 18px 30px;
+        font-size: 15px;
+    }
+    &:hover {
+        color: var(--tg-common-color-black-2);
+    }
+    & .svg-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        fill: var(--tg-theme-primary);
+        stroke: var(--tg-common-color-white);
+        stroke-width: 2px;
+        fill-rule: evenodd;
+        z-index: -1;
+        & svg {
+            display: block;
+            @include transition(.3s);
+        }
+    }
+}
+
+/* TG Button 04 */
+.tg-btn-4 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: var(--tg-heading-font-family);
+    color: var(--tg-common-color-white);
+    font-weight: var(--tg-fw-extra-bold);
+    background: transparent;
+    border: none;
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 0;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    @include transition(.3s);
+    span {
+        padding: 19.5px 35px;
+        display: flex;
+        position: relative;
+        z-index: 1;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            inset: 0px;
+            background: var(--tg-common-color-white);
+            clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px, 18px 0, 18px 1px, 1px 18px, 1px calc(100% - 1px), calc(100% - 18px) calc(100% - 1px), calc(100% - 1px) calc(100% - 18px), calc(100% - 1px) 1px, 18px 1px);
+            z-index: -1;
+            transition: 0.4s;
+            opacity: 0.15;
+        }
+        &:after {
+            background: var(--tg-common-color-white);
+            inset: 1px;
+            clip-path: polygon(18px 0%, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0% 18px);
+            opacity: 0.06;
+        }
+    }
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        background: var(--tg-theme-primary);
+        top: 5px;
+        left: 5px;
+        transition: 0.4s;
+        z-index: 2;
+    }
+    &:before {
+        top: auto;
+        left: auto;
+        bottom: 5px;
+        right: 5px;
+    }
+    &:hover {
+        color: var(--tg-common-color-black);
+        span {
+            &:after {
+                opacity: 1;
+            }
+        }
+        &:after,
+        &:before {
+            background: var(--tg-theme-primary);
+        }
+    }
+}
+
+/* TG Button 05 */
+.tg-btn-5 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: var(--tg-heading-font-family);
+    color: var(--tg-common-color-white);
+    font-weight: var(--tg-fw-extra-bold);
+    background: transparent;
+    border: none;
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 0;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    @include transition(.3s);
+    span {
+        padding: 19.5px 35px;
+        display: flex;
+        position: relative;
+        z-index: 1;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            inset: 0px;
+            background: var(--tg-common-color-white);
+            clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px, 18px 0, 18px 1px, 1px 18px, 1px calc(100% - 1px), calc(100% - 18px) calc(100% - 1px), calc(100% - 1px) calc(100% - 18px), calc(100% - 1px) 1px, 18px 1px);
+            z-index: -1;
+            transition: 0.4s;
+        }
+        &:after {
+            background: var(--tg-common-color-white);
+            inset: 1px;
+            clip-path: polygon(18px 0%, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0% 18px);
+            opacity: 0;
+        }
+    }
+    &:after,
+    &:before {
+        content: '';
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        background: var(--tg-common-color-white);
+        top: 5px;
+        left: 5px;
+        transition: 0.4s;
+        z-index: 2;
+    }
+    &:before {
+        top: auto;
+        left: auto;
+        bottom: 5px;
+        right: 5px;
+    }
+    &:hover {
+        color: var(--tg-common-color-black);
+        span {
+            &:after {
+                opacity: 1;
+            }
+        }
+        &:after,
+        &:before {
+            background: var(--tg-theme-primary);
+        }
+    }
+}
+.tg-btn-line {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--tg-heading-font-family);
+    color: var(--tg-common-color-white);
+    text-transform: uppercase;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--tg-theme-primary);
+        transform-origin: right top;
+        transform: scale(0, 1);
+        transition: transform 0.4s cubic-bezier(0.74, 0.72, 0.27, 0.24);
+    }
+    &:hover {
+        color: var(--tg-theme-primary);
+        &:after {
+            transform-origin: left top;
+            transform: scale(1, 1);
+        }
+    }
+}

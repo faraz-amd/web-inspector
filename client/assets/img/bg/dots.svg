@@ -1,0 +1,37 @@
+<svg id="dots.svg" xmlns="http://www.w3.org/2000/svg" width="109" height="35" viewBox="0 0 109 35">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #45f882;
+      }
+    </style>
+  </defs>
+  <g id="line_1">
+    <rect class="cls-1" width="9" height="7"/>
+    <rect id="Rectangle_817_copy" data-name="Rectangle 817 copy" class="cls-1" x="15" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_2" data-name="Rectangle 817 copy 2" class="cls-1" x="29" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_3" data-name="Rectangle 817 copy 3" class="cls-1" x="44" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_4" data-name="Rectangle 817 copy 4" class="cls-1" x="58" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_5" data-name="Rectangle 817 copy 5" class="cls-1" x="71" width="9" height="7"/>
+  </g>
+  <g id="line_2">
+    <rect class="cls-1" y="14" width="9" height="7"/>
+    <rect id="Rectangle_817_copy-2" data-name="Rectangle 817 copy" class="cls-1" x="15" y="14" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_2-2" data-name="Rectangle 817 copy 2" class="cls-1" x="29" y="14" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_3-2" data-name="Rectangle 817 copy 3" class="cls-1" x="44" y="14" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_4-2" data-name="Rectangle 817 copy 4" class="cls-1" x="58" y="14" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_5-2" data-name="Rectangle 817 copy 5" class="cls-1" x="71" y="14" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_6" data-name="Rectangle 817 copy 6" class="cls-1" x="86" y="14" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_7" data-name="Rectangle 817 copy 7" class="cls-1" x="100" y="14" width="9" height="7"/>
+  </g>
+  <g id="line_3">
+    <rect class="cls-1" y="28" width="9" height="7"/>
+    <rect id="Rectangle_817_copy-3" data-name="Rectangle 817 copy" class="cls-1" x="15" y="28" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_2-3" data-name="Rectangle 817 copy 2" class="cls-1" x="29" y="28" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_3-3" data-name="Rectangle 817 copy 3" class="cls-1" x="44" y="28" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_4-3" data-name="Rectangle 817 copy 4" class="cls-1" x="58" y="28" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_5-3" data-name="Rectangle 817 copy 5" class="cls-1" x="71" y="28" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_6-2" data-name="Rectangle 817 copy 6" class="cls-1" x="86" y="28" width="9" height="7"/>
+    <rect id="Rectangle_817_copy_7-2" data-name="Rectangle 817 copy 7" class="cls-1" x="100" y="28" width="9" height="7"/>
+  </g>
+</svg>
